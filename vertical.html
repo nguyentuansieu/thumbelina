@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thumbelina Content Slider</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Include jQuery. -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+        <!-- Include Thumbelina CSS. -->
+        <link rel="stylesheet" type="text/css" href="thumbelina.css" />
+        <!-- Include Thumbelina script. -->
+        <script type="text/javascript" src="thumbelina.js"></script>
+        <!-- Create sliders. -->
+        <script type="text/javascript">
+            $(function(){
+                $('#slider3').Thumbelina({
+                    orientation:'vertical',         // Use vertical mode (default horizontal).
+                    $bwdBut:$('#slider3 .top'),     // Selector to top button.
+                    $fwdBut:$('#slider3 .bottom'),   // Selector to bottom button.
+                    $largeZone: $('#slider3_img'),
+                    $thumbZone: $('#slider3_item_thumb li')
+                });
+            });
+        </script>    
+
+        <style type="text/css">
+            #slider3 {
+                position:relative;
+                width:93px;
+                height:300px;
+                border-left:1px solid #f9f9f9;
+                border-right:1px solid #f9f9f9;
+                margin-top: 22px;
+                margin-bottom: 22px;
+            }
+
+            .slider3_thumb,
+            .slider3_large {
+                display: inline-block;
+                float: left;
+            }
+            .slider3_large {
+                margin-left: 5px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Thumbelina Content Slider</h1>
+        <div class="slider3_wrap">
+            <div class="slider3_thumb">
+                <div id="slider3">
+                    <div class="thumbelina-but vert top"></div>
+                    <ul id="slider3_item_thumb">
+                        <li data-large-image="images/large/image1.jpg"><img src="images/image1.jpg"></li>
+                        <li data-large-image="images/large/image2.jpg"><img src="images/image2.jpg"></li>
+                        <li data-large-image="images/large/image3.jpg"><img src="images/image3.jpg"></li>
+                        <li data-large-image="images/large/image4.jpg"><img src="images/image4.jpg"></li>
+                        <li data-large-image="images/large/image5.jpg"><img src="images/image5.jpg"></li>
+                        <li data-large-image="images/large/image6.jpg"><img src="images/image6.jpg"></li>
+                    </ul>
+                    <div class="thumbelina-but vert bottom"></div>
+                </div>
+            </div>
+            <div class="slider3_large">
+                <img src="images/large/image1.jpg" id="slider3_img" width="400" />
+            </div>
+        </div>
+    </body>
+</html>

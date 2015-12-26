@@ -99,10 +99,23 @@
             
             $list.css(orientData.cssAttr, Math.floor(pos));
         };
+
+
         
         setInterval(function(){
             animate();
         },1000/60);
+
+        //Zoom image
+        if(settings.$largeZone != null && settings.$thumbZone != null) {
+            settings.$thumbZone.click(function(e) {
+                e.preventDefault();
+                var newImage = $(this).attr('data-large-image');
+                settings.$largeZone.fadeOut(500, function() {
+                    settings.$largeZone.attr('src', newImage).fadeIn(1500);
+                });
+            });
+        }
     };
     
     $.fn.Thumbelina.defaults = {
@@ -110,7 +123,9 @@
         easing:         8,              // Amount of easing (min 1) larger = more drift.
         maxSpeed:       5,              // Max speed of movement (pixels per cycle).
         $bwdBut:   null,                // jQuery element used as backward button.
-        $fwdBut:    null                // jQuery element used as forward button.
+        $fwdBut:    null,                // jQuery element used as forward button.
+        $largeZone: null,
+        $thumbZone: null
     };
     
 })(jQuery);
